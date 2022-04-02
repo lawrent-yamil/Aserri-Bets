@@ -20,13 +20,15 @@ while True:
         apuesta.append(bet)
         monto_Apuesta.append(monto)
         print("Apuesta realizada con exito")
+
+        apuesta_monto = zip(apuesta, monto_Apuesta)
+        apuesta_monto = sorted(apuesta_monto, key=lambda x: x[1], reverse=True)
+        for i in apuesta_monto:
+            print(f"{i[0]} - {i[1]}")
+
     else:
         print("Error, ingrese un número entre 0 y 99")
         continue
-    print("\n")
-    print("Apuesta: ", apuesta)
-    print("Monto: ", monto_Apuesta)
-    print("\n")
     print("Desea seguir apostando? (S/N)")
     print("\n")
 
